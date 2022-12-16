@@ -10,17 +10,16 @@ import mjolnir from '../../resources/img/mjolnir.png';
 
 class RandomChar extends Component {
 
-    constructor(props) {
-        super(props);
-        this.updateChar();
-    }
-
     marvelService = new MarvelService();
 
     state = {
         char: {},
         loading: true,
         error: false
+    }
+
+    componentDidMount() {
+        this.updateChar();
     }
 
     onError = () => {
